@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>Liste des Catégories</h1>
-    <a href="index.php?page=categorie&action=addCategorieView">Ajouter un contact</a>
+    <a href="index.php?page=categorie&action=addCategorieView">Ajouter une catégorie</a>
 
 
         

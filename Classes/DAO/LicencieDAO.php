@@ -1,0 +1,31 @@
+<?php
+require_once("Config/Connexion.php");
+class LicencieDAO {
+
+    public function __construct() {
+        $this->connexion = new Connexion();
+    }
+    public function create(LicencieModel $licencie){
+        $sql = "INSERT INTO licencie (nom, prenom,codecategorie) VALUES (?,?,?)";
+        $this->connexion->pdo->prepare($sql)->execute([$licencie->getNom(), 
+        $licencie->getPrenom(),$licencie->getCodeCategorie()]);
+    }
+    public function getAll(){
+        $sql = "SELECT numlicencie, nom, prenom, numcontact, nomcategorie FROM licencie l, categorie c WHERE c.codecategorie = l.codecategorie ";
+        return $this->connexion->pdo->query($sql);
+    }
+    public function getById($id){
+        $sql = "SELECT * FROM licencie Where numlicencie = '$id'";
+        return $this->connexion->pdo->query($sql)->fetch();
+    }
+    public function update(LicencieModel $licencie){
+        $sql = "UPDATE licencie SET nom = ?, prenom = ?, codecategorie = ? WHERE numlicencie = ?";
+        return $this->connexion->pdo->prepare($sql)->execute([$licencie->getNom(), $licencie->getPrenom(),
+        $licencie->getCodeCategorie(), $licencie->getId()]);
+    }
+    public function delete($id){
+        $sql = "DELETE FROM licencie WHERE numlicencie = ?";
+        return $this->connexion->pdo->prepare($sql)->execute([$id]);
+    }
+}
+?>

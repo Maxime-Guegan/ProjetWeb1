@@ -2,10 +2,10 @@
 if(isset($_GET["page"])){
     $page = $_GET["page"];
 }else{
-    $page = "categorie";
+    $page = "licencie";
 }
-$controllers = [ "categorie" => "CategorieController"];
-$daos = [ "categorie" => "CategorieDAO"];
+$controllers = [ "categorie" => "CategorieController", "licencie" => "LicencieController"];
+$daos = [ "categorie" => "CategorieDAO", "licencie" => "LicencieDAO"];
 
 if(array_key_exists($page,$controllers) && array_key_exists($page,$daos)){
     $controllerName = $controllers[$page];
