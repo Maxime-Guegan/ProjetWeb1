@@ -5,7 +5,7 @@ class Connexion{
     // Connexion à la base de données en utilisant PDO
 public function __construct(){
     $host = "localhost"; // L'hôte de la base de données (généralement "localhost")
-    $database = "ClubSportif"; // Le nom de la base de données que vous avez créée
+    $database = "clubsportif"; // Le nom de la base de données que vous avez créée
     $username = "root";// Votre nom d'utilisateur MySQL
     $password = "";// Votre mot de passe MySQL
     try {
