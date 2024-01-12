@@ -1,10 +1,11 @@
 <?php
 require_once("Models/CategorieModel.php");
+require_once("DAO/CategorieDAO.php");
 class CategorieController {
     private $categorieDAO;
 
-    public function __construct(CategorieDAO $categorieDAO) {
-        $this->categorieDAO = $categorieDAO;
+    public function __construct() {
+        $this->categorieDAO = new CategorieDAO();
     }
 
     public function index() {

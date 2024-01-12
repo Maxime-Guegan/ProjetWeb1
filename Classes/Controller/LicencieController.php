@@ -1,16 +1,20 @@
 <?php
 require_once("Models/LicencieModel.php");
 require_once("DAO/CategorieDAO.php");
+require_once("DAO/LicencieDAO.php");
+require_once("DAO/EnseignantDAO.php");
 class LicencieController {
-    private $licenceDAO;
+    private $licencieDAO;
     private $categorieDAO;
-    public function __construct(LicencieDAO $licenceDAO) {
-        $this->licenceDAO = new LicencieDAO();
+    private $enseignantDAO;
+    public function __construct() {
+        $this->licencieDAO = new LicencieDAO();
         $this->categorieDAO = new CategorieDAO();
+        $this->enseignantDAO = new EnseignantDAO();
     }
 
     public function index() {
-        $data = $this->licenceDAO->getAll();
+        $data = $this->licencieDAO->getAll();
        include("View/Licencie.php");
     }
     public function addLicencieView(){
@@ -19,25 +23,27 @@ class LicencieController {
     }
     public function addLicencie(){
         $Licencie = new LicencieModel(0,$_POST["nom"],$_POST["prenom"],0,$_POST["code"]);
-        $this->licenceDAO->create($Licencie);
+        $this->licencieDAO->create($Licencie);
+        $data = $this->categorieDAO->getAll();
         include("View/addLicencie.php");
         echo "insertion réussie";
     }
     public function updateLicencieView($id){
         $data = $this->categorieDAO->getAll();
-        $licencie = $this->licenceDAO->getById($id);
+        $licencie = $this->licencieDAO->getById($id);
         include("View/UpdateLicencie.php");
     }
     public function updateLicencie(){
         $licencie = new LicencieModel($_POST["id"],$_POST["nom"],$_POST["prenom"],0,$_POST["code"]);
-        $this->licenceDAO->update($licencie);
-        $data = $this->licenceDAO->getAll();
+        $this->licencieDAO->update($licencie);
+        $data = $this->licencieDAO->getAll();
        include("View/Licencie.php");
        
     }
     public function deleteLicencie($id){
-        $this->licenceDAO->delete($id);
-        $data = $this->licenceDAO->getAll();
+        $this->enseignantDAO->delete($id);
+        $this->licencieDAO->delete($id);
+        $data = $this->licencieDAO->getAll();
        include("View/Licencie.php");
     }
 }

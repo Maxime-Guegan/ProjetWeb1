@@ -1,14 +1,14 @@
 <?php
-class EducateurModel{
+class EnseignantModel{
     private $id;
     private $email;
     private $mdp;
-
-    public function __construct($id, $email, $mdp){
+    private $admin;
+    public function __construct($id, $email, $mdp, $admin){
         $this->id = $id;
         $this->email = $email;
         $this->mdp = $mdp;
-        
+        $this->admin = $admin;
     }
 
     public function setId($id){
@@ -28,6 +28,12 @@ class EducateurModel{
     }
     public function getMdp(){
         return $this->mdp;
+    }
+    public function setAdmin($admin){
+        $this->admin = $admin;
+    }
+    public function getAdmin(){
+        return $this->admin;
     }
     
 }

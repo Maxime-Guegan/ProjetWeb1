@@ -24,8 +24,13 @@ class LicencieDAO {
         $licencie->getCodeCategorie(), $licencie->getId()]);
     }
     public function delete($id){
+       
         $sql = "DELETE FROM licencie WHERE numlicencie = ?";
         return $this->connexion->pdo->prepare($sql)->execute([$id]);
+    }
+    public function getLastId(){
+        $sql = "SELECT Max(numlicencie) as id FROM licencie";
+        return $this->connexion->pdo->query($sql)->fetch();
     }
 }
 ?>
