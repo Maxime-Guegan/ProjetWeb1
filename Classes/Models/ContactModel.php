@@ -4,13 +4,14 @@ class ContactModel{
     private $nom;
     private $prenom;
     private $email;
-   
+    private $numTel;
 
-    public function __construct($id, $nom, $prenom, $email){
+    public function __construct($id, $nom, $prenom, $email, $numTel){
         $this->id = $id;
         $this->nom = $nom;
         $this->prenom = $prenom;
         $this->email = $email;
+        $this->numTel = $numTel;
     }
 
     public function setId($id){
@@ -37,6 +38,12 @@ class ContactModel{
     }
     public function getEmail(){
         return $this->email;
+    }
+    public function setNumTel($numTel){
+        $this->numTel = $numTel;
+    }
+    public function getNumTel(){
+        return $this->numTel;
     }
 }
 

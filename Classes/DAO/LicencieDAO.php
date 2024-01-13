@@ -32,5 +32,13 @@ class LicencieDAO {
         $sql = "SELECT Max(numlicencie) as id FROM licencie";
         return $this->connexion->pdo->query($sql)->fetch();
     }
+    public function updateContact($idLicencie,$idContact){
+        $sql = "UPDATE licencie set numcontact = ? WHERE numlicencie = ?";
+        return $this->connexion->pdo->prepare($sql)->execute([$idContact, $idLicencie]); 
+    }
+    public function deleteContact($idContact){
+        $sql = "UPDATE licencie set numcontact = null WHERE numcontact = ?";
+        return $this->connexion->pdo->prepare($sql)->execute([$idContact]); 
+    }
 }
 ?>

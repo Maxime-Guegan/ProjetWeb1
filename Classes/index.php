@@ -4,7 +4,8 @@ if(isset($_GET["page"])){
 }else{
     $page = "enseignant";
 }
-$controllers = [ "categorie" => "CategorieController", "licencie" => "LicencieController", "enseignant" => "EnseignantController"];
+$controllers = [ "categorie" => "CategorieController", "licencie" => "LicencieController",
+ "enseignant" => "EnseignantController", "contact" => "ContactController"];
 
 
 if(array_key_exists($page,$controllers)){
@@ -17,14 +18,8 @@ if(array_key_exists($page,$controllers)){
 if(isset($_GET["action"])){
     $action = $_GET["action"];
     if(isset($_GET["param"])){
-        $param = $_GET["param"];
-        if(isset($_GET["param2"])){
-            $param2 = $_GET["param2"];
-            $controller->$action($param, $param2);
-        }else{
-            
-            $controller->$action($param);
-        }
+        $param = $_GET["param"];   
+        $controller->$action($param);
         
         
     }else{

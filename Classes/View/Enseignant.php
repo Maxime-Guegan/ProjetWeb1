@@ -36,9 +36,9 @@
                                 <td>".$row['nomcategorie']."</td>
                                 ";
                                 if(is_null($row["numcontact"])){
-                                    echo "<td><a href='index.php?page=categorie&action=updateCategorieView&param=".$row['numlicencie']."'>Créer</a></td>";
+                                    echo "<td><a href='index.php?page=contact&action=addContactView&param=".$row['numlicencie']."'>Créer</a></td>";
                                 }else{
-                                    echo"<td><a href='index.php?page=categorie&action=updateCategorieView&param=".$row['numlicencie']."'>Voir</a></td>";
+                                    echo"<td><a href='index.php?page=contact&action=updateContactView&param=".$row['numcontact']."'>Voir</a></td>";
                                 }
                                 echo"
                                 <td>".$row['email']."</td>
