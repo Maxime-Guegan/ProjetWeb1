@@ -9,6 +9,7 @@ class ContactController {
     private $contactDAO;
     
     public function __construct() {
+        session_start();
         if(!isset($_SESSION["user"])){
             header('Location: index.php?page=login');
             exit();
