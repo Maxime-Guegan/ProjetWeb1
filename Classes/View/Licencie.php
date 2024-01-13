@@ -55,7 +55,7 @@
             }
            
         ?>
-        
+        <br><a href="index.php?page=home">Acceuil</a>
 
 </body>
 </html>

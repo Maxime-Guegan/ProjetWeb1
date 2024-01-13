@@ -5,7 +5,8 @@ if(isset($_GET["page"])){
     $page = "login";
 }
 $controllers = [ "categorie" => "CategorieController", "licencie" => "LicencieController",
- "enseignant" => "EnseignantController", "contact" => "ContactController", "login" => "LoginController"];
+ "enseignant" => "EnseignantController", "contact" => "ContactController", "login" => "LoginController",
+"home" => "HomeController"];
 
 
 if(array_key_exists($page,$controllers)){
