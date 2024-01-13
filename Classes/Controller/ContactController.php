@@ -9,6 +9,10 @@ class ContactController {
     private $contactDAO;
     
     public function __construct() {
+        if(!isset($_SESSION["user"])){
+            header('Location: index.php?page=login');
+            exit();
+        }
         $this->licencieDAO = new LicencieDAO();
         $this->contactDAO = new ContactDAO();
     }

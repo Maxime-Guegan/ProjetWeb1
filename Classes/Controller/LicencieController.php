@@ -8,6 +8,10 @@ class LicencieController {
     private $categorieDAO;
     private $enseignantDAO;
     public function __construct() {
+        if(!isset($_SESSION["user"])){
+            header('Location: index.php?page=login');
+            exit();
+        }
         $this->licencieDAO = new LicencieDAO();
         $this->categorieDAO = new CategorieDAO();
         $this->enseignantDAO = new EnseignantDAO();
