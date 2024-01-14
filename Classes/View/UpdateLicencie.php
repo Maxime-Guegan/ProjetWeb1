@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Modifier un Licencié</title>
-    <!-- Ajoutez ici vos liens CSS ou styles pour la mise en forme -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body>
     <h1>Modifier un Licencié</h1>
-    <a href="index.php?page=licencie">Retour à la liste des Licenciés</a>
+    <a href="index.php?page=licencie" class="btn btn-primary">Retour à la liste des Licenciés</a>
 
     <form action="index.php?page=licencie&action=updateLicencie" method="post">
     <input type="hidden" id="id" name="id" value="<?php echo $licencie["NumLicencie"]?>" required><br>

@@ -15,6 +15,7 @@ class CategorieController {
 
     public function index() {
         $data = $this->categorieDAO->getAll();
+        include("View/Menu.php");
        include("View/Categorie.php");
     }
     public function addCategorieView(){

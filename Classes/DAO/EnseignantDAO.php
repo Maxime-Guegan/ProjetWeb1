@@ -30,7 +30,7 @@ class EnseignantDAO {
         
     }
     public function login($email,$mdp){
-        $sql = "SELECT * FROM enseignant WHERE email = '$email' AND mdp = '$mdp'";
+        $sql = "SELECT * FROM enseignant WHERE email = '$email' AND mdp = '$mdp' AND administrateur = '1'";
         return $this->connexion->pdo->query($sql)->fetch();
     }
 }

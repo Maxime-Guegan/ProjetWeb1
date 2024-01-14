@@ -12,16 +12,17 @@ class LoginController {
 
     public function index() {
         
-        echo $_SESSION["user"];
+        
        include("View/Login.php");
     }
     public function login(){
         
-        echo $_SESSION["user"];
+        
         $login = $this->enseignantDAO->login($_POST["email"],$_POST["mdp"]);
         
         if($login != false){
             $_SESSION["user"] = "oui";
+            include("View/Menu.php");
             include("View/Home.php");
         }else{
             include("View/Login.php");

@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>Liste des Enseignants</title>
-    <!-- Ajoutez ici vos liens CSS ou styles pour la mise en forme -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body>
     <h1>Liste des Enseignants</h1>
-    <a href="index.php?page=enseignant&action=addEnseignantView">Ajouter un Enseignant</a>
+    <a href="index.php?page=enseignant&action=addEnseignantView" class="btn btn-primary">Ajouter un Enseignant</a>
 
 
         
         <?php 
 
             if($data->rowCount() > 0){
-                echo"   <table>
+                echo"   <table class='table'>
                 <thead>
                     <tr>
                         <th>Nom</th>
@@ -67,7 +67,7 @@
             }
            
         ?>
-        <br><a href="index.php?page=home">Acceuil</a>
+       
 
 </body>
 </html>

@@ -21,6 +21,7 @@ class EnseignantController {
 
     public function index() {
         $data = $this->enseignantDAO->getAll();
+        include("View/Menu.php");
        include("View/Enseignant.php");
     }
     public function addEnseignantView(){

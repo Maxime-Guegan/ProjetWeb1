@@ -20,6 +20,7 @@ class LicencieController {
 
     public function index() {
         $data = $this->licencieDAO->getAll();
+        include("View/Menu.php");
        include("View/Licencie.php");
     }
     public function addLicencieView(){
